@@ -1,0 +1,8 @@
+pre_ci_boot:
+    image: 172.21.0.13:5000/alauda/hello-world
+    tag: latest 
+
+ci:
+    - echo "<h1>hello yaml !</h1>" > aayml.txt
+    - cp aayml.txt $ALAUDACI_UPLOAD_DIR
+    - sleep 1
