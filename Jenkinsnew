@@ -1,5 +1,5 @@
 def namespace = 'jiaonew'
-def deploymentName = 'go-test'
+def deploymentName = 'go-test0705'
 
 def buildImage = 'index.alauda.cn/alaudak8s/hello-go:latest'
 def imageRepo = 'index.alauda.cn/alaudak8s/hello-go'
