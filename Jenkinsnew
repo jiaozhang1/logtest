@@ -1,7 +1,7 @@
 def namespace = 'jiaonew'
 def deploymentName = 'go-test'
 
-def buildImage = 'index.alauda.cn/alaudak8s/s2i-golang:1.8'
+def buildImage = 'index.alauda.cn/alaudak8s/hello-go:latest'
 def imageRepo = 'index.alauda.cn/alaudak8s/hello-go'
 def registryCredentials = "alaudak8s"
 def imageTag = 'latest'
