@@ -2,7 +2,7 @@ def namespace = 'jiaonew'
 def deploymentName = 'go-test0705'
 
 def buildImage = 'index-staging.alauda.cn/testorg001/zjpublic:zjlogtest'
-def imageRepo = 'index.alauda.cn/alaudak8s/hello-go'
+def imageRepo = 'index-staging.alauda.cn/testorg001/zjpublic'
 def registryCredentials = "alaudak8s"
 def imageTag = 'latest-logtest'
 def imageUrl = ""
