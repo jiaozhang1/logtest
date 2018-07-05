@@ -72,7 +72,6 @@ pipeline {
                 sh """
                 docker build -t ${imageUrlPredefined} ${contextDir}
                 docker tag ${imageUrlPredefined} ${imageUrl}
-                //docker tag ${deploymentName} ${imageUrlPredefined}
                 docker push ${imageUrl}
                 docker push ${imageUrlPredefined}
                 """
