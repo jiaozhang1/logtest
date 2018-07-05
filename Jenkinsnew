@@ -84,7 +84,7 @@ pipeline {
                         echo "Updating the deployment $deploymentName with image $imageUrl in project ${alaudaDevops.project()}"
 
                         def p = alaudaDevops.selector('deploy', deploymentName).object()
-                        p.metadata.labels['BUILD_ID']=env.BUILD_ID
+                        p.metadata.labels['app']=env.BUILD_ID
                         p.spec.template.spec.containers[0]['image'] = imageUrl
                         alaudaDevops.apply(p)
 
