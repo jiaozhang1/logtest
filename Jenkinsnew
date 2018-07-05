@@ -2,7 +2,7 @@ def namespace = 'jiaonew'
 def deploymentName = 'go-test0705'
 
 def buildImage = 'index.alauda.cn/alaudaorg/qaimages:helloworld'
-def imageRepo = 'index.alauda.cn/alaudaorg/qaimages '
+def imageRepo = 'index.alauda.cn/alaudaorg/qaimages'
 def registryCredentials = "alaudaorg-secret"
 def imageTag = 'helloworld'
 def imageUrl = ""
