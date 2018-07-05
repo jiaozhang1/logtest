@@ -1,10 +1,10 @@
 def namespace = 'jiaonew'
 def deploymentName = 'go-test0705'
 
-def buildImage = 'index-staging.alauda.cn/testorg001/zjpublic:zjlogtest'
-def imageRepo = 'index-staging.alauda.cn/testorg001/zjpublic'
-def registryCredentials = "staging-secret"
-def imageTag = 'latest-logtest'
+def buildImage = 'index.alauda.cn/alaudaorg/qaimages:helloworld'
+def imageRepo = 'index.alauda.cn/alaudaorg/qaimages '
+def registryCredentials = "alaudaorg-secret"
+def imageTag = 'helloworld'
 def imageUrl = ""
 def imageUrlPredefined = "$imageRepo:$imageTag"
 def subCommand = ""
