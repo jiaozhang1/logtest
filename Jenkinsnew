@@ -5,7 +5,6 @@ def buildImage = 'index.alauda.cn/alaudaorg/qaimages:helloworld'
 def imageRepo = 'index.alauda.cn/alaudaorg/qaimages'
 def registryCredentials = "alaudaorg-secret"
 def imageTag = 'helloworld'
-def imageUrl = ""
 def imageUrlPredefined = "$imageRepo:$imageTag"
 def subCommand = ""
 
@@ -31,13 +30,6 @@ pipeline {
                         branch: gitRef,
                         credentialsId: gitCredentials,
                     )
-                    def commitID = "${scmVars.GIT_COMMIT}"
-                    if (commitID){
-                        imageUrl = "$imageRepo:$commitID"
-                    }else{
-                        imageUrl = imageRepo
-                    }
-                    echo "commitID: $commitID; imageUrl: $imageUrl"
                 }
             }
         }
@@ -72,7 +64,6 @@ pipeline {
                 sh """
                 docker build -t ${imageUrlPredefined} ${contextDir}
                 docker tag ${imageUrlPredefined} ${imageUrl}
-                docker push ${imageUrl}
                 docker push ${imageUrlPredefined}
                 """
             }
@@ -81,11 +72,11 @@ pipeline {
             steps {
                 script {
                     alaudaDevops.withProject(namespace) {
-                        echo "Updating the deployment $deploymentName with image $imageUrl in project ${alaudaDevops.project()}"
+                        echo "Updating the deployment $deploymentName with image $imageUrlPredefined in project ${alaudaDevops.project()}"
 
                         def p = alaudaDevops.selector('deploy', deploymentName).object()
                         p.metadata.labels['app']=env.BUILD_ID
-                        p.spec.template.spec.containers[0]['image'] = imageUrl
+                        p.spec.template.spec.containers[0]['image'] = imageUrlPredefined
                         alaudaDevops.apply(p)
 
                         echo "Completed the update."
