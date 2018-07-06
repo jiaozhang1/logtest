@@ -71,8 +71,7 @@ pipeline {
                 // s2i build ./ ${subCommand} ${buildImage} ${deploymentName}
                 sh """
                 docker build -t ${imageUrlPredefined} ${contextDir}
-                docker tag ${deploymentName} ${imageUrl}
-                docker tag ${deploymentName} ${imageUrlPredefined}
+                docker tag ${imageUrlPredefined} ${imageUrl}
                 docker push ${imageUrl}
                 docker push ${imageUrlPredefined}
                 """
