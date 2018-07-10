@@ -1,5 +1,5 @@
 pre_ci_boot:
-    image: 172.21.0.13:5000/alauda/hello-world
+    image: index-staging.alauda.cn/testorg001/zjpublic
     tag: latest 
 
 ci:
