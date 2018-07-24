@@ -3,6 +3,6 @@ pre_ci_boot:
     tag: latest 
 
 ci:
-    - echo "<h1>hello logloglogloglllHHH!</h1>" > aayml.txt
+    - echo "<h1>hello logloglogloglHHH!</h1>" > aayml.txt
     - cp aayml.txt $ALAUDACI_UPLOAD_DIR
     - sleep 1
