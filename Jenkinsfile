@@ -1,4 +1,4 @@
-def namespace = 'zjproject'
+def namespace = 'yyproject'
 def deploymentName = 'image-test1'
 
 def buildImage = 'index-staging.alauda.cn/testorg001/zjpublic:latest-lognew'
