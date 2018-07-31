@@ -350,7 +350,7 @@ pipeline {
         echo "Deploy66666..."
       }
     }
-    stage('Deploy7') {
+    stage('Deploy7777') {
       steps {
         echo "Deploy7..."
         echo "Deploy7..."
