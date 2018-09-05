@@ -1,5 +1,5 @@
-def namespace = 'yyproject'
-def deploymentName = 'image-test1'
+def namespace = 'jiaoproject'
+def deploymentName = 'imagetest3'
 
 def buildImage = 'index-staging.alauda.cn/testorg001/zjpublic:latest-lognew'
 def imageRepo = 'index-staging.alauda.cn/testorg001/zjpublic'
